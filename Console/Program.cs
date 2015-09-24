@@ -35,6 +35,10 @@ namespace ConsoleApp
                 var outputFileName = Path.ChangeExtension(path, ".mp3");
                 MediaFoundationEncoder.EncodeToMp3(reader, outputFileName);
             }
+            // we may need a policy around deleting files when we fail
+            // a temporary failure should allow retry
+            // a permanent one should not
+            File.Delete(path);
         }
 
         private static void OnError(object sender, ErrorEventArgs e)
