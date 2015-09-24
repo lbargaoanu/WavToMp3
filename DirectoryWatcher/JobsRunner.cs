@@ -88,8 +88,8 @@ namespace Teamnet.DirectoryWatcher
 		{
 			public WorkItemsQueue() : base("WorkItemsQueue", 
                                                             backgroundThread: true, 
-                                                            maxThreadsCount : Utils.GetSetting<byte>("maxThreads", (byte) Environment.ProcessorCount),
-                                                            minThreadsCount : Utils.GetSetting<byte>("minThreads", 1))
+                                                            maxThreadsCount : Utils.GetSetting("maxThreads", (byte) Environment.ProcessorCount),
+                                                            minThreadsCount : Utils.GetSetting("minThreads", (byte) 1))
 			{
 			}
 
